@@ -1,0 +1,217 @@
+.container {
+    padding: 3rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #151515;
+  }
+  
+  .form {
+    background-color: #3f3939;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .form input, .form button {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .form input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .form button {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .preview {
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .preview img {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+  .gigsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .gigCard {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gigCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  .gigCard img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .gigCard h3 {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    color: #333;
+  }
+  
+  .gigCard p {
+    margin: 0.5rem 0;
+    color: #555;
+    font-size: 1rem;
+  }
+  
+  .gigCard a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .gigCard a:hover {
+    text-decoration: underline;
+  }
+  
+  .actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .editButton {
+    background: #ffca28;
+    color: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .editButton:hover {
+    background: #ffc107;
+  }
+  
+  .deleteButton {
+    background: #ef5350;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .deleteButton:hover {
+    background: #e53935;
+  }
+  
+  .pagination {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .pagination button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: #0056b3;
+  }
+  
+  .pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination span {
+    font-size: 1.2rem;
+    margin: 0 1rem;
+    color: #333;
+  }
+
+  .EditModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.EditModal {
+  background: #3a3a3a;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.PreviewContainer {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  .PreviewImage {
+    width: 100%;
+    max-width: 300px; 
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  

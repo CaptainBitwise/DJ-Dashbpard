@@ -1,0 +1,50 @@
+.Home {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.HomeContainer {
+    width: 100%;
+    max-width: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.HomeContent {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+}
+
+.HomeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #fbfbfb;
+    color: #151515;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.HomeButton:hover {
+    background-color: #00cccc;
+    transform: translateY(-5px);
+    color: #ffffff;
+}
+
+.HomeButtonIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

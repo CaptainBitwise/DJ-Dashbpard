@@ -1,0 +1,14 @@
+.NavContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #620586;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.NavLogo {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #151515;
+}

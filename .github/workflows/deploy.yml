@@ -1,0 +1,48 @@
+name: CI/CD Docker Deploy to Oracle VM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: Dash-Enviroment
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/dj-dashboard:latest
+          platforms: linux/arm64
+
+      - name: Deploy to Oracle VM via SSH
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}
+          key: ${{ secrets.VM_PRIVATE_KEY }}
+          script: |
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/dj-dashboard:latest
+            docker stop dj-dashboard || true
+            docker rm dj-dashboard || true
+            docker run -d --network docker_network-main --name dj-dashboard -p 3005:3005 \
+              -e PORT=3005 \
+              -e CHANNEL_ID=${{vars.CHANNEL_ID}} \
+              -e YOUTUBE_API_KEY=${{ vars.YOUTUBE_API_KEY }} \
+              ${{ secrets.DOCKERHUB_USERNAME }}/dj-dashboard:latest

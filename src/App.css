@@ -1,0 +1,52 @@
+:root {
+  --font-primary: 'Montserrat', sans-serif;
+  --font-title: 'Racing Sans One', cursive;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #151515;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  box-sizing: border-box;
+  scroll-snap-type: y mandatory;
+  color: #fff;
+  padding: 0 2rem;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+h2 {
+  color: #FFFF00;
+  font-size: 4.2rem;
+  text-transform: uppercase;
+}
+
+#root {
+  width: 100%;
+}
+
+
