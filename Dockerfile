@@ -8,7 +8,6 @@ COPY vite.config.ts ./
 COPY index.html ./
 COPY src ./src
 COPY public ./public
-COPY .env .env
 
 RUN bun install
 RUN bun run build
