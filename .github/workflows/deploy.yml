@@ -43,5 +43,5 @@ jobs:
             docker rm dj-dashboard || true
             docker run -d --network docker_network-main --name dj-dashboard -p 3005:3005 \
               -e PORT=3005 \
-              -e CHANNEL_ID=${{secrets.CHANNEL_ID}} \
+              -e CHANNEL_ID=${{secrets.VITE_API_URL}} \
               ${{ secrets.DOCKERHUB_USERNAME }}/dj-dashboard:latest

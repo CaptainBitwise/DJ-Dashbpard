@@ -5,29 +5,29 @@ import GigsPage from '../pages/Gigs';
 import GalleryPage from '../pages/Gallery';
 import AuthPage from '../pages/Auth';
 
-const router = createBrowserRouter ([
+const router = createBrowserRouter([
     {
         path: '/dashboard',
-        element: <Home/>,
+        element: <Home />,
         errorElement: <div>Error 404</div>,
     },
     {
-        path: '/gigs',
-        element: <GigsPage/>
+        path: '/dashboard/gigs',
+        element: <GigsPage />
     },
     {
-        path: '/news',
-        element: <NewsPage/>
+        path: '/dashboard/news',
+        element: <NewsPage />
     },
     {
-        path: '/gallery',
+        path: '/dashboard/gallery',
         element: <GalleryPage />
     },
     {
-        path: '/auth',
-        element: <AuthPage/>
+        path: '/dashboard/auth',
+        element: <AuthPage />
     }
-])
+]);
 
 const JeimRoutes: React.FC = () => <RouterProvider router={router} />;
 
