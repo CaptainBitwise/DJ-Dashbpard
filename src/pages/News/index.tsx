@@ -43,10 +43,9 @@ const NewsPage = () => {
     setEditTitle(newsItem.title);
     setEditDescription(newsItem.description);
     setEditLink(newsItem.link);
-    setEditPreview(newsItem.imageUrl); // para mostrar imagen actual
-    setIsEditing(true); // abre el modal
+    setEditPreview(newsItem.imageUrl);
+    setIsEditing(true);
   };
-
 
   const handleDeleteNews = async (newsItemId: string) => {
     if (confirm('Are you sure you want to delete this news?')) {
@@ -58,7 +57,6 @@ const NewsPage = () => {
       }
     }
   };
-
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();

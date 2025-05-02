@@ -13,12 +13,12 @@ const Home = () => {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate('/dashboard');
+      navigate('/');
     }
   }, [isAuthenticated, navigate]);
 
   const handleCreateNews = () => {
-    navigate('/news'); 
+    navigate('/news');
   };
 
   const handleCreateGigs = () => {
@@ -26,12 +26,12 @@ const Home = () => {
   };
 
   const handleUploadPhotos = () => {
-    navigate('/gallery'); 
+    navigate('/gallery');
   };
 
   return (
     <>
-      <Nav/>
+      <Nav />
 
       <div className={styles.Home}>
         <div className={styles.HomeContainer}>
