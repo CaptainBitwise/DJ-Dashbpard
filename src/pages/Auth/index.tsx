@@ -11,7 +11,7 @@ const AuthPage = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/dashboard');
+      navigate('/dashboard/');
     }
   }, [isAuthenticated, navigate]);
 
