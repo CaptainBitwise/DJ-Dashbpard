@@ -24,7 +24,7 @@ const router = createBrowserRouter ([
         element: <GalleryPage />
     },
     {
-        path: '/auth',
+        path: '/authentication',
         element: <AuthPage/>
     }
 ])
