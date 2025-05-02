@@ -18,12 +18,12 @@ const NewsPage = () => {
   const [preview, setPreview] = useState<string | null>(null);
 
   const [isEditing, setIsEditing] = useState(false);
-const [editingNewsId, setEditingNewsId] = useState<string | null>(null);
-const [editTitle, setEditTitle] = useState('');
-const [editDescription, setEditDescription] = useState('');
-const [editLink, setEditLink] = useState('');
-const [editImage, setEditImage] = useState<File | null>(null);
-const [editPreview, setEditPreview] = useState<string | null>(null);
+  const [editingNewsId, setEditingNewsId] = useState<string | null>(null);
+  const [editTitle, setEditTitle] = useState('');
+  const [editDescription, setEditDescription] = useState('');
+  const [editLink, setEditLink] = useState('');
+  const [editImage, setEditImage] = useState<File | null>(null);
+  const [editPreview, setEditPreview] = useState<string | null>(null);
 
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const [editPreview, setEditPreview] = useState<string | null>(null);
     setEditPreview(newsItem.imageUrl); // para mostrar imagen actual
     setIsEditing(true); // abre el modal
   };
-  
+
 
   const handleDeleteNews = async (newsItemId: string) => {
     if (confirm('Are you sure you want to delete this news?')) {
@@ -98,45 +98,45 @@ const [editPreview, setEditPreview] = useState<string | null>(null);
     <>
       <Nav />
       {isEditing && (
-      <EditNewsModal
-        title={editTitle}
-        description={editDescription}
-        link={editLink}
-        preview={editPreview}
-        onChangeTitle={setEditTitle}
-        onChangeDescription={setEditDescription}
-        onChangeLink={setEditLink}
-        onChangeImage={(file) => {
-          setEditImage(file);
-          if (file) {
-            setEditPreview(URL.createObjectURL(file));
-          }
-        }}
-        onSave={async () => {
-          if (!editTitle || !editDescription || !editLink) {
-            alert('All fields are required.');
-            return;
-          }
+        <EditNewsModal
+          title={editTitle}
+          description={editDescription}
+          link={editLink}
+          preview={editPreview}
+          onChangeTitle={setEditTitle}
+          onChangeDescription={setEditDescription}
+          onChangeLink={setEditLink}
+          onChangeImage={(file) => {
+            setEditImage(file);
+            if (file) {
+              setEditPreview(URL.createObjectURL(file));
+            }
+          }}
+          onSave={async () => {
+            if (!editTitle || !editDescription || !editLink) {
+              alert('All fields are required.');
+              return;
+            }
 
-          const formData = new FormData();
-          formData.append('title', editTitle);
-          formData.append('description', editDescription);
-          formData.append('link', editLink);
-          if (editImage) formData.append('image', editImage);
+            const formData = new FormData();
+            formData.append('title', editTitle);
+            formData.append('description', editDescription);
+            formData.append('link', editLink);
+            if (editImage) formData.append('image', editImage);
 
-          if (editingNewsId) {
-            await useNewsStore.getState().updateNews(editingNewsId, formData);
-            await fetchNews();
-          }
+            if (editingNewsId) {
+              await useNewsStore.getState().updateNews(editingNewsId, formData);
+              await fetchNews();
+            }
 
-          setIsEditing(false);
-        }}
-        onCancel={() => setIsEditing(false)}
-      />
-    )}
+            setIsEditing(false);
+          }}
+          onCancel={() => setIsEditing(false)}
+        />
+      )}
       <div className={styles.NewsPageContainer}>
         <h1 className={styles.Title}>News Dashboard</h1>
-        
+
         <form onSubmit={handleSubmit} className={styles.NewsForm}>
           <h2>Create News</h2>
           <input
